@@ -1,0 +1,20 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "description": "hapi learn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hapi",
+    "nodejs"
+  ],
+  "author": "duya",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/bell": "^11.1.0",
+    "@hapi/hapi": "^18.4.0",
+    "@hapi/joi": "^16.1.7"
+  }
+}
