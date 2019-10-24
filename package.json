@@ -15,7 +15,13 @@
   "dependencies": {
     "@hapi/bell": "^11.1.0",
     "@hapi/hapi": "^18.4.0",
+    "@hapi/inert": "^5.2.2",
     "@hapi/joi": "^16.1.7",
-    "env2": "^2.2.2"
+    "@hapi/vision": "^5.5.4",
+    "env2": "^2.2.2",
+    "hapi-swagger": "^10.2.0",
+    "inert": "^5.1.3",
+    "package": "^1.0.1",
+    "vision": "^5.4.4"
   }
 }

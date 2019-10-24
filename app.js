@@ -9,6 +9,9 @@ const duyaRoute = require("./routes/duya");
 // 導入默認信息
 const defaultConfig = require("./config/index");
 
+// 引入swagger
+const swagger = require("./plugins/swagger");
+
 const server = Hapi.server({
 	port: defaultConfig.port,
 	host: defaultConfig.host
@@ -22,40 +25,20 @@ server.ext("onRequest", function(request, h) {
 	return h.continue;
 });
 
-// 創建人生hapi的第一個插件
-const getDate = {
-	name: "getDate",
-	version: "1.0.0",
-	register: async function(server, option) {
-		const currentDate = function() {
-			const date = new Date(); // 獲取當前的時間
-			return date;
-		};
-
-		server.decorate("toolkit", "getDate", currentDate);
-	}
-};
-
-// 使用cookies
-server.state("data", {
-	ttl: null,
-	isSecure: true,
-	isHttpOnly: true
-});
-
 const init = async () => {
 
-	await server.start();
+	await server.register([
+		...swagger
+	]);
 
-	// 在server中注冊它
-	server.register({
-		plugin: getDate
-	});
+	server.route([...duyaRoute])
+
+	await server.start();
 
 	console.log("Server running on %s", server.info.uri)
 };
 
-server.route([...duyaRoute])
+
 
 process.on("unHandledRejection", (err) => {
 	console.log(err);
