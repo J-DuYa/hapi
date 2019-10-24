@@ -1,8 +1,17 @@
+"use stricts";
+
 const Hapi = require("@hapi/hapi");
 
+require("env2")("./.env")
+// routers
+const duyaRoute = require("./routes/duya");
+
+// 導入默認信息
+const defaultConfig = require("./config/index");
+
 const server = Hapi.server({
-	port: "3000",
-	host: "localhost"
+	port: defaultConfig.port,
+	host: defaultConfig.host
 });
 
 server.ext("onRequest", function(request, h) {
@@ -35,19 +44,6 @@ server.state("data", {
 });
 
 const init = async () => {
-	server.route({
-		method: "GET",
-		path: "/test",
-		handler: async (req, h) => {
-			// console.log("我看看這裏面有什麽：", req, h);
-			console.log("我想使用插件：", h.getDate)
-			await h.state("data", {username: "duya"})
-			return {
-				name: req.query.name,
-				time: h.getDate()
-			}
-		}
-	})
 
 	await server.start();
 
@@ -58,6 +54,8 @@ const init = async () => {
 
 	console.log("Server running on %s", server.info.uri)
 };
+
+server.route([...duyaRoute])
 
 process.on("unHandledRejection", (err) => {
 	console.log(err);
