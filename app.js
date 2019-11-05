@@ -48,7 +48,7 @@ const init = async () => {
 
 	server.route([...duyaRoute])
 
-	sequelize.sync({ force: true }).then(() => {
+	sequelize.sync({ force: false }).then(() => {
 		console.log("connection database successed");
 	}).catch(err => {
 		console.log("connection database failed: %s", err);

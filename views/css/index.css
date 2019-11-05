@@ -1,0 +1,159 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p {
+	padding: 0;
+	margin: 0;
+	font-family: system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
+}
+.container {
+
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 100px;
+	height: 60px;
+	box-shadow: 0 0.0625rem 1rem 0 rgba(0,0,0,.1);
+	background: #fff;
+	z-index: 999;
+}
+
+.home .logo {
+  letter-spacing: 1.5px;
+  font-size: 25px;
+  color: #02b9db;
+  font-weight: bold;
+  /*font-style: */
+}
+
+.home .logo img {
+	width: 50px;
+	height: 50px;
+}
+
+.home .menu {
+	display: inline-block;
+	margin-right: 50px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.dy-button {
+	width: 80px;
+    height: 40px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 0.0625rem 0.375rem 0 rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+.dy-button:hover {
+	background-color: #05478e;
+}
+
+.dy-button-primary {
+    background-color: #02b9db;
+    transition: background-color .3s ease;
+}
+
+/* 主体内容区域 */
+.home .content {
+	position: absolute;
+	top: 60px;
+	left: 0;
+	right: 0;
+	min-height: calc(100vh - 60px);
+	background: #ddd;
+}
+
+.content {
+	/*padding: 0 100px;*/
+	overflow: hidden;
+}
+
+.content-mid {
+	padding: 30px 100px;
+	/*justify-content: flex-start;*/
+	align-items: center;
+	box-sizing: border-box;
+	/*height: 50vh;*/
+	height: 500px;
+	background: url(https://browsee.io/static/media/header-background.23f8ecff.jpg) no-repeat;
+	background-size: cover;
+}
+
+.content-mid .info {
+	display: flex;
+	margin-top: -30px;
+	padding-left: 100px;
+	width: 50%;
+	/*align-items: center;*/
+	/*justify-content: center;*/
+	flex-direction: column;
+	/*color: #fff;*/
+	box-sizing: border-box;
+}
+
+.content-mid .contact {
+    width: 70%;
+	min-width: 400px;
+	font-size: 16px;
+	color: #008B8B;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.content-mid .title {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.content-mid .desc {
+	margin-top: 10px;
+	width: 75%;
+	min-width: 400px;
+	font-size: 18px;
+	letter-spacing: .5px;
+	line-height: 28px;
+	color: #666;
+}
+
+.content-mid .svg img {
+	margin-left: 15vh;
+	height: 360px;
+}
+
+/* margin */
+.mt20 {
+	margin-top: 20px;
+}
+
+.home .canvas {
+	display: flex;
+	/*justify-content: center;*/
+	padding: 30px 100px;
+	box-sizing: border-box;
+	min-height: 600px;
+}

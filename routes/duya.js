@@ -3,9 +3,23 @@ const models = require("../models");
 module.exports = [
 	{
 		method: "GET",
+		path: "/css/index.css",
+		handler: {
+			file: "views/css/index.css"
+		}
+	},
+	{
+		method: "GET",
 		path: "/home",
 		handler: {
 			file: "views/home.html"
+		}
+	},
+	{
+		method: "GET",
+		path: "/svg/game.svg",
+		handler: {
+			file: "views/svg/game.svg"
 		}
 	},
 	{
