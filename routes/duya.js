@@ -19,7 +19,28 @@ module.exports = [
 		method: "GET",
 		path: "/svg/game.svg",
 		handler: {
-			file: "views/svg/game.svg"
+			file: "views/svg/components/game.svg"
+		}
+	},
+	{
+		method: "GET",
+		path: "/svg/circle.svg",
+		handler: {
+			file: "views/svg/components/circle.svg"
+		}
+	},
+	{
+		method: "GET",
+		path: "/svg/fire.svg",
+		handler: {
+			file: "views/svg/components/fire.svg"
+		}
+	},
+	{
+		method: "GET",
+		path: "/svg/ellipse.svg",
+		handler: {
+			file: "views/svg/components/ellipse.svg"
 		}
 	},
 	{
